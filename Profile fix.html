@@ -1,0 +1,650 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Personal Profile - Fadzhar</title>
+
+<style>
+
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* BACKGROUND */
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(135deg, #e9edf5, #dce5ff);
+    color: #293750;
+    padding: 20px;
+    animation: fadeIn 1.2s ease;
+}
+
+/* ANIMASI */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideRight {
+    from {
+        opacity: 0;
+        transform: translateX(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes floating {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-9px);
+    }
+}
+
+/* CONTAINER */
+.container {
+    width: 100%;
+    max-width: 950px;
+    margin: auto;
+    padding: 25px;
+    background: white;
+    border-radius: 18px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+    animation: fadeUp 1s ease;
+}
+
+/* HEADER */
+.header {
+    display: grid;
+    grid-template-columns: 34fr 66fr;
+    gap: 20px;
+    align-items: center;
+    margin-bottom: 25px;
+    animation: slideDown 1s ease both;
+}
+
+/* FOTO */
+.photo-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-photo {
+    width: 135px;
+    height: 135px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid #647dee;
+    box-shadow: 0 5px 20px rgba(100,125,238,0.3);
+    animation: floating 3s ease-in-out infinite;
+}
+
+/* NAMA */
+.name-box {
+    min-height: 135px;
+    background: linear-gradient(135deg, #f0f2ff, #e8edff);
+    border: 1px solid #dfe5ff;
+    border-radius: 15px;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.name-box h1 {
+    font-size: 27px;
+    color: #405de6;
+    margin-bottom: 8px;
+}
+
+.name-box p {
+    font-size: 14px;
+    color: #75819a;
+}
+
+/* LAYOUT */
+.main-content {
+    display: grid;
+    grid-template-columns: 34fr 66fr;
+    gap: 20px;
+    align-items: stretch;
+}
+
+/* CARD */
+.card {
+    background: #f8faff;
+    border: 1px solid #e2e8f3;
+    border-radius: 15px;
+    padding: 20px;
+    transition: 0.3s ease;
+}
+
+.card h2 {
+    color: #405de6;
+    font-size: 19px;
+    margin-bottom: 18px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #e4e9ff;
+}
+
+/* BIODATA */
+.biodata {
+    height: 100%;
+    animation: slideLeft 1s ease 0.3s both;
+}
+
+.bio-item {
+    padding: 12px;
+    background: white;
+    border: 1px solid #e5eaf3;
+    border-radius: 10px;
+    margin-bottom: 12px;
+    animation: fadeUp 0.7s ease both;
+    transition: 0.3s ease;
+}
+
+.bio-item:nth-child(2) { animation-delay: 0.3s; }
+.bio-item:nth-child(3) { animation-delay: 0.4s; }
+.bio-item:nth-child(4) { animation-delay: 0.5s; }
+.bio-item:nth-child(5) { animation-delay: 0.6s; }
+.bio-item:nth-child(6) { animation-delay: 0.7s; }
+.bio-item:nth-child(7) { animation-delay: 0.8s; }
+.bio-item:nth-child(8) { animation-delay: 0.9s; }
+.bio-item:nth-child(9) { animation-delay: 1s; }
+.bio-item:nth-child(10) { animation-delay: 1.1s; }
+.bio-item:nth-child(11) { animation-delay: 1.2s; }
+.bio-item:nth-child(12) { animation-delay: 1.3s; }
+.bio-item:nth-child(13) { animation-delay: 1.4s; }
+.bio-item:nth-child(14) { animation-delay: 1.5s; }
+
+.bio-item h3 {
+    font-size: 11px;
+    color: #8a96aa;
+    margin-bottom: 5px;
+}
+
+.bio-item p {
+    font-size: 13px;
+    font-weight: bold;
+    color: #34435c;
+    line-height: 1.5;
+}
+
+/* HOVER */
+.bio-item:hover,
+.hobby-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 18px rgba(64,93,230,0.13);
+}
+
+/* KOLOM KANAN */
+.right-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    min-width: 0;
+    animation: slideRight 1s ease 0.5s both;
+}
+
+/* DESKRIPSI */
+.description {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.description p {
+    font-size: 14px;
+    color: #59667c;
+    line-height: 1.85;
+    text-align: justify;
+}
+
+.description p + p {
+    margin-top: 12px;
+}
+
+/* HOBI */
+.hobby-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.hobby-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 13px;
+    background: white;
+    border: 1px solid #e4e9f3;
+    border-radius: 11px;
+    transition: 0.3s ease;
+    animation: fadeUp 0.8s ease both;
+}
+
+.hobby-item:nth-child(1) { animation-delay: 0.6s; }
+.hobby-item:nth-child(2) { animation-delay: 0.8s; }
+.hobby-item:nth-child(3) { animation-delay: 1s; }
+.hobby-item:nth-child(4) { animation-delay: 1.2s; }
+
+.hobby-icon {
+    font-size: 25px;
+}
+
+.hobby-item h3 {
+    font-size: 13px;
+    color: #405de6;
+}
+
+.hobby-item p {
+    font-size: 10px;
+    color: #8490a5;
+    margin-top: 4px;
+}
+
+/* QUOTE */
+.quote {
+    margin-top: 20px;
+    padding: 18px;
+    background: linear-gradient(135deg, #edf0ff, #e4eaff);
+    border-radius: 12px;
+    text-align: center;
+    animation: fadeUp 1s ease 1s both;
+}
+
+.quote h3 {
+    font-size: 15px;
+    color: #405de6;
+    margin-bottom: 10px;
+}
+
+.quote p {
+    font-size: 13px;
+    line-height: 1.8;
+    font-style: italic;
+    color: #5865a3;
+}
+
+.quote small {
+    display: block;
+    margin-top: 10px;
+    font-size: 11px;
+    color: #8490b5;
+}
+
+/* FOOTER */
+footer {
+    margin-top: 25px;
+    padding-top: 15px;
+    border-top: 1px solid #e5eaf3;
+    text-align: center;
+    font-size: 12px;
+    color: #8993a5;
+    line-height: 1.8;
+}
+
+/* RESPONSIVE HP */
+@media (max-width: 600px) {
+
+    body {
+        padding: 8px;
+    }
+
+    .container {
+        padding: 12px;
+        border-radius: 14px;
+    }
+
+    .header {
+        gap: 10px;
+        margin-bottom: 15px;
+    }
+
+    .profile-photo {
+        width: 85px;
+        height: 85px;
+    }
+
+    .name-box {
+        min-height: 85px;
+        padding: 12px;
+    }
+
+    .name-box h1 {
+        font-size: 18px;
+    }
+
+    .name-box p {
+        font-size: 10px;
+    }
+
+    .main-content {
+        gap: 10px;
+    }
+
+    .card {
+        padding: 11px;
+    }
+
+    .card h2 {
+        font-size: 14px;
+        margin-bottom: 12px;
+    }
+
+    .bio-item {
+        padding: 8px;
+        margin-bottom: 9px;
+    }
+
+    .bio-item h3 {
+        font-size: 9px;
+    }
+
+    .bio-item p {
+        font-size: 10px;
+        overflow-wrap: anywhere;
+    }
+
+    .description {
+        flex: initial;
+    }
+
+    .description p {
+        font-size: 11px;
+        line-height: 1.7;
+    }
+
+    .hobby-list {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+
+    .hobby-item {
+        padding: 9px;
+    }
+
+    .hobby-icon {
+        font-size: 19px;
+    }
+
+    .hobby-item h3 {
+        font-size: 11px;
+    }
+
+    .hobby-item p {
+        font-size: 9px;
+    }
+
+    .quote {
+        padding: 12px;
+    }
+
+    .quote p {
+        font-size: 10px;
+    }
+
+}
+
+/* PENGATURAN AKSESIBILITAS */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- HEADER -->
+    <div class="header">
+
+        <div class="photo-area">
+            <img
+                src="Foto.jpg"
+                alt="Foto Profil Fadzhar"
+                class="profile-photo"
+            >
+        </div>
+
+        <div class="name-box">
+            <h1>Fadzhar</h1>
+            <p>Fadzhar Az-zubair Afif</p>
+        </div>
+
+    </div>
+
+    <!-- KONTEN UTAMA -->
+    <div class="main-content">
+
+        <!-- BIODATA -->
+        <div class="card biodata">
+
+            <h2>Bio Data</h2>
+
+            <div class="bio-item">
+                <h3>Nama Lengkap</h3>
+                <p>Fadzhar Az-zubair Afif</p>
+            </div>
+
+            <div class="bio-item">
+                <h3>Usia</h3>
+                <p>18 Tahun</p>
+            </div>
+
+            <div class="bio-item">
+                <h3>Tempat Lahir</h3>
+                <p>Bekasi</p>
+            </div>
+
+            <div class="bio-item">
+                <h3>Tanggal Lahir</h3>
+                <p>19 Desember 2008</p>
+            </div>
+
+            <div class="bio-item">
+                <h3>Jenis Kelamin</h3>
+                <p>Laki-laki</p>
+            </div>
+
+            <div class="bio-item">
+                <h3>Agama</h3>
+                <p>Islam</p>
+            </div>
+
+            <div class="bio-item">
+                <h3>Kewarganegaraan</h3>
+                <p>Indonesia</p>
+            </div>
+
+            <div class="bio-item">
+                <h3>Sekolah</h3>
+                <p>SMAN 1 SETU</p>
+            </div>
+
+            <div class="bio-item">
+                <h3>Kelas</h3>
+                <p>XII</p>
+            </div>
+
+            <div class="bio-item">
+                <h3>Jurusan</h3>
+                <p>Kesehatan</p>
+            </div>
+
+            <div class="bio-item">
+                <h3>Minat Akademik</h3>
+                <p>Kimia dan Biologi</p>
+            </div>
+
+            <div class="bio-item">
+                <h3>Cita-cita</h3>
+                <p>Apoteker</p>
+            </div>
+
+            <div class="bio-item">
+                <h3>Alamat</h3>
+                <p>Perum. GBP 1 Jl Anggrek 3</p>
+            </div>
+
+        </div>
+
+        <!-- KOLOM KANAN -->
+        <div class="right-content">
+
+            <!-- DESKRIPSI -->
+            <div class="card description">
+
+                <h2>Deskripsi Diri</h2>
+
+                <p>
+                    Perkenalkan, nama saya Fadzhar Az-zubair Afif.
+                    Saya merupakan siswa SMAN 1 SETU dan saat ini
+                    sedang menempuh pendidikan di bangku kelas XII.
+                    Saya adalah seseorang yang memiliki rasa ingin
+                    tahu tinggi serta ketertarikan terhadap ilmu
+                    pengetahuan, khususnya di bidang kimia, biologi,
+                    dan kesehatan.
+                </p>
+
+                <p>
+                    Saya senang mempelajari berbagai hal baru,
+                    memahami konsep ilmiah, serta mengeksplorasi
+                    bagaimana ilmu pengetahuan dapat diterapkan
+                    dalam kehidupan sehari-hari. Bagi saya, proses
+                    belajar bukan hanya tentang memperoleh informasi,
+                    tetapi juga tentang memahami, menganalisis, dan
+                    mengembangkan pengetahuan menjadi sesuatu
+                    yang bermanfaat
+                </p>
+
+            </div>
+
+            <!-- HOBI -->
+            <div class="card">
+
+                <h2>Hobby</h2>
+
+                <div class="hobby-list">
+
+                    <div class="hobby-item">
+                        <span class="hobby-icon">📚</span>
+                        <div>
+                            <h3>Reading</h3>
+                            <p>Knowledge & Books</p>
+                        </div>
+                    </div>
+
+                    <div class="hobby-item">
+                        <span class="hobby-icon">🧪</span>
+                        <div>
+                            <h3>Experiment</h3>
+                            <p>Science & Research</p>
+                        </div>
+                    </div>
+
+                    <div class="hobby-item">
+                        <span class="hobby-icon">⚽</span>
+                        <div>
+                            <h3>Sport</h3>
+                            <p>Physical Activities</p>
+                        </div>
+                    </div>
+
+                    <div class="hobby-item">
+                        <span class="hobby-icon">🌍</span>
+                        <div>
+                            <h3>Exploration</h3>
+                            <p>Discover New Things</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- QUOTE -->
+                <div class="quote">
+
+                    <h3>My Quote</h3>
+
+                    <p>
+                        "Semakin banyak kamu menjelajah,
+                        semakin banyak hal yang kamu temukan.
+                        Jangan pernah berhenti belajar,
+                        karena ilmu pengetahuan tidak memiliki batas."
+                    </p>
+
+                    <small>~ Personal Motivation ~</small>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2026 Personal Profile</p>
+        <p>Designed by Fadzhar</p>
+    </footer>
+
+</div>
+
+</body>
+</html>
